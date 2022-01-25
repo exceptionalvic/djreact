@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Root> {/* replace BrowserRouter with Root */}
+        <Root>
           <Switch>
             <Route path="/signup" component={Signup} />
             <Route path="/login" component={Login} />
@@ -18,7 +18,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="*">Ups</Route>
           </Switch>
-          </Root> {/* replace BrowserRouter with Root */}
+        </Root>
       </div>
     );
   }
