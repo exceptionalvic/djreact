@@ -1,6 +1,6 @@
 {
-  "short_name": "Easycata",
-  "name": "Free Simple Storefront SaaS",
+  "short_name": "DJreact",
+  "name": "Django + React SaaS Project",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,0 +1,1 @@
+https://saasitive.com/tutorial/token-based-authentication-django-rest-framework-djoser/
