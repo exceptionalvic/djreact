@@ -1,6 +1,9 @@
 // frontend/src/components/signup/Signup.js
 
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom"; // new import
+import { connect } from "react-redux"; // new import
+import PropTypes from "prop-types"; // new import
 import { Link } from "react-router-dom";
 import {
   Container,
@@ -10,6 +13,7 @@ import {
   Form,
   FormControl
 } from "react-bootstrap";
+import { signupNewUser } from "./SignupActions"; // new import
 
 class Signup extends Component {
   constructor(props) {
@@ -28,7 +32,7 @@ class Signup extends Component {
       username: this.state.username,
       password: this.state.password
     };
-    console.log("Sign up " + userData.username + " " + userData.password);
+    this.props.signupNewUser(userData); // <-- signup new user request
   };
 
   render() {
@@ -76,4 +80,21 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+// export default Signup;
+// connect action and reducer
+// replace 
+// export default Signup;
+// with code below:
+
+Signup.propTypes = {
+  signupNewUser: PropTypes.func.isRequired,
+  createUser: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  createUser: state.createUser
+});
+
+export default connect(mapStateToProps, {
+  signupNewUser
+})(withRouter(Signup));
